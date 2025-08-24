@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "my-project",
+  "name": "mern",
   "builds": [
     { "src": "index.js", "use": "@vercel/node" },
     { "src": "product-app/dist/**", "use": "@vercel/static" }
