@@ -1,15 +1,15 @@
 {
-"version": 2,
-"name": "my-project",
-"builds": [
-{ "src": "index.js", "use": "@vercel/node" },
-{"src":"product-app/dist/**", "use":"@versel/static"}
-],
-"routes": [
-{ "src": "/products/", "dest": "/index.js" },
-{"src":"/products/(.*)","dest":"/index.js"},
-{"src":"/","dest":"/product-app/dist/index.html"},
-{"src":"/add","dest":"/product-app/dist/index.html"},
-{"src":"/(.+)","dist":"/product-app/dist/$1"}
-]
+  "version": 2,
+  "name": "my-project",
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" },
+    { "src": "product-app/dist/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/products/", "dest": "/index.js" },
+    { "src": "/products/(.*)", "dest": "/index.js" },
+    { "src": "/", "dest": "/product-app/dist/index.html" },
+    { "src": "/add", "dest": "/product-app/dist/index.html" },
+    { "src": "/(.*)", "dest": "/product-app/dist/$1" }
+  ]
 }
