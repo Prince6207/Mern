@@ -3,10 +3,13 @@
 "name": "my-project",
 "builds": [
 { "src": "index.js", "use": "@vercel/node" },
-{"src":"product-app", "use":"@versel/static"}
+{"src":"product-app/dist/**", "use":"@versel/static"}
 ],
 "routes": [
 { "src": "/products/", "dest": "/index.js" },
-{"src":"/(.*)","dest":"/product-app/index.html"}
+{"src":"/products/(.*)","dest":"/index.js"},
+{"src":"/","dest":"/product-app/dist/index.html"},
+{"src":"/add","dest":"/product-app/dist/index.html"},
+{"src":"/(.+)","dist":"/product-app/dist/$1"}
 ]
 }
