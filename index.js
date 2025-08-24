@@ -1,4 +1,4 @@
-require("dotenv").config()
+// require("dotenv").config()
 // import {sum,diff} from "./lib.js";
 // console.log(sum(3,4),diff(5,4));
 // const fs=require("fs");
