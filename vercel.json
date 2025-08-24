@@ -2,9 +2,11 @@
 "version": 2,
 "name": "my-project",
 "builds": [
-{ "src": "index.js", "use": "@vercel/node" }
+{ "src": "index.js", "use": "@vercel/node" },
+{"src":"product-app", "use":"@versel/static"}
 ],
 "routes": [
-{ "src": "/(.*)", "dest": "/index.js" }
+{ "src": "/products/", "dest": "/index.js" },
+{"src":"/(*)","dest":"/product-app/index.html"}
 ]
 }
