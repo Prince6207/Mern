@@ -59,7 +59,6 @@ async function main() {
 }
 
 const productrouter=require("./router/product");
-const userrouter=require("./router/user")
 const server=express();
 server.use(cors())
 server.use(express.json())
@@ -110,7 +109,6 @@ server.use(express.static(path.resolve(__dirname,'product-app','dist')));
 // })
 
 server.use("/products",productrouter.router);
-server.use("/users",userrouter.router);
 server.use('/add',(req,res)=>{
   res.sendFile(path.resolve(__dirname,'product-app','dist','index.html'));
 });
