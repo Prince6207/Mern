@@ -3,13 +3,13 @@
   "name": "mern",
   "builds": [
     { "src": "index.js", "use": "@vercel/node" },
-    { "src": "product-app/dist/**", "use": "@vercel/static" }
+    { "src": "dist/**", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/products/", "dest": "/index.js" },
     { "src": "/products/(.*)", "dest": "/index.js" },
-    { "src": "/", "dest": "/product-app/dist/index.html" },
-    { "src": "/add", "dest": "/product-app/dist/index.html" },
-    { "src": "/(.*)", "dest": "/product-app/dist/$1" }
+    { "src": "/", "dest": "/dist/index.html" },
+    { "src": "/add", "dest": "/dist/index.html" },
+    { "src": "/(.*)", "dest": "/dist/$1" }
   ]
 }

@@ -65,7 +65,7 @@ server.use(cors())
 server.use(express.json())
 // server.use(morgan("default"))
 server.use("/products",productrouter.router);
-server.use(express.static(path.resolve(__dirname,'product-app','dist')));
+server.use(express.static(path.resolve(__dirname,'dist')));
 
 // const auth=server.use((req,res,next)=>{
     // console.log(req.method,req.hostname,req.get("User-Agent"))
