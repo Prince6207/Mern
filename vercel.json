@@ -7,6 +7,6 @@
 ],
 "routes": [
 { "src": "/products/", "dest": "/index.js" },
-{"src":"/(*)","dest":"/product-app/index.html"}
+{"src":"/(.*)","dest":"/product-app/index.html"}
 ]
 }
