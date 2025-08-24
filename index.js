@@ -59,10 +59,12 @@ async function main() {
 }
 
 const productrouter=require("./router/product");
+
 const server=express();
 server.use(cors())
 server.use(express.json())
 // server.use(morgan("default"))
+server.use("/products",productrouter.router);
 server.use(express.static(path.resolve(__dirname,'product-app','dist')));
 
 // const auth=server.use((req,res,next)=>{
@@ -108,10 +110,8 @@ server.use(express.static(path.resolve(__dirname,'product-app','dist')));
 //     res.json({type:"patch"})
 // })
 
-server.use("/products",productrouter.router);
-server.use('/add',(req,res)=>{
-  res.sendFile(path.resolve(__dirname,'product-app','dist','index.html'));
-});
-server.listen(8080,()=>{
+
+
+server.listen(PORT,()=>{
     console.log("server started");
 })
