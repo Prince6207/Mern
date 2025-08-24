@@ -112,6 +112,6 @@ server.use(express.static(path.resolve(__dirname,'product-app','dist')));
 
 
 
-server.listen(PORT,()=>{
+server.listen(8080,()=>{
     console.log("server started");
 })
