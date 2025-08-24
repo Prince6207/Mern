@@ -1,0 +1,14 @@
+div{
+    display: flex;
+    flex-direction: column;
+    
+}
+.card{
+border: 2px solid white;
+    margin: 20px;
+    padding: 20px;
+}
+img{
+    height: 400px;
+    width: 400px;
+}
