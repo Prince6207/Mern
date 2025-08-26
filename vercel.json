@@ -6,7 +6,7 @@
     { "src": "dist/**", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/products/", "dest": "/index.js" },
+    { "src": "/products", "dest": "/index.js" },
     { "src": "/products/(.*)", "dest": "/index.js" },
     { "src": "/", "dest": "product-app/dist/index.html" },
     { "src": "/add", "dest": "product-app/dist/index.html" },
