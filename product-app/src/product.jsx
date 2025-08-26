@@ -2,7 +2,7 @@ import axios from 'axios';
 import './addproduct.css';
 function Product({_id,title,description,category,price,discountPercentage,rating,stock,brand,thumbnail,__v}){
     const handleclick=async (id)=>{
-    const doc=await axios.delete(`products/${id}`)
+    const doc=await axios.delete(`/products/${id}`)
     console.log(doc);
     window.location.reload();
     }

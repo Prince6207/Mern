@@ -6,7 +6,7 @@ import Product from './product';
 function Productlist(){
     const [products,setProducts]=useState([]);
 async function getproducts(){
-const res=await axios.get('products');
+const res=await axios.get('/products');
 console.log(res.data);
 setProducts(res.data);
 }
