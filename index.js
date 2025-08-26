@@ -1,4 +1,4 @@
-require("dotenv").config()
+// require("dotenv").config()
 // import {sum,diff} from "./lib.js";
 // console.log(sum(3,4),diff(5,4));
 // const fs=require("fs");
@@ -53,7 +53,7 @@ const cors = require('cors');
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(process.env.DATABASE_URL);
+  await mongoose.connect(DATABASE_URL);
     console.log("database connected");
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
