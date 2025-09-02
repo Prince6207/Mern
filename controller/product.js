@@ -1,5 +1,6 @@
 const fs=require('fs');
-const model=require("../model/product");
+const path=require("path")
+const model=require(path.resolve(__dirname,"model/product.js"));
 const Product=model.Product;
 exports.createproduct=async(req,res)=>{
     const product=new Product(req.body);

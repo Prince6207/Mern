@@ -1,5 +1,6 @@
 const express=require("express")
-const productcontroller=require("../controller/product");
+const path=require("path")
+const productcontroller=require(path.resolve(__dirname,"router/product.js"));
 const router=express.Router();
 router
 .post("/",productcontroller.createproduct)
