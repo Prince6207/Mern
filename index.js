@@ -53,18 +53,17 @@ const cors = require('cors');
 main().catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(DATABASE_URL);
+  await mongoose.connect(process.env.DATABASE_URL);
     console.log("database connected");
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
 }
 
 const productrouter=require("./router/product");
-
+// const userrouter=require("./router/user")
 const server=express();
 server.use(cors())
 server.use(express.json())
 // server.use(morgan("default"))
-server.use("/products",productrouter.router);
 server.use(express.static(path.resolve(__dirname,'dist')));
 
 // const auth=server.use((req,res,next)=>{
@@ -110,8 +109,11 @@ server.use(express.static(path.resolve(__dirname,'dist')));
 //     res.json({type:"patch"})
 // })
 
-
-
-server.listen(()=>{
+server.use("/products",productrouter.router);
+// server.use("/users",userrouter.router);
+server.use('/add',(req,res)=>{
+  res.sendFile(path.resolve(__dirname,'dist','index.html'));
+});
+server.listen(8080,()=>{
     console.log("server started");
 })

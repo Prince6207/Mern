@@ -1,12 +1,11 @@
-const fs=require('fs');
-const path=require("path")
-const model=require(path.resolve(__dirname,"model/product.js"));
+// const path=require("path");
+const model=require("../model/product");
 const Product=model.Product;
 exports.createproduct=async(req,res)=>{
     const product=new Product(req.body);
     try{
         const doc=await product.save();
-        res.status(201).json(product);
+        res.status(201).json(doc);
     }catch(err){
         res.status(400).json(err);
     }
